@@ -9,7 +9,7 @@ IConfiguration configuration = new ConfigurationBuilder()
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // Register the DataContext service
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration["Data:Blog:ConnectionString"]));
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(configuration["Data:Northwind:ConnectionString"]));
 var app = builder.Build();
 
 app.UseHttpsRedirection();
