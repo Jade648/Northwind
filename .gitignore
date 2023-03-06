@@ -1,0 +1,8 @@
+.vscode
+bin 
+obj
+apsettings.json
+apsettings.Developer.json
+launchSettings.json
+
+
