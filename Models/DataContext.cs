@@ -6,4 +6,5 @@ public class DataContext : DbContext
 
   public DbSet<Category> Product{ get; set; }
   public DbSet<Product> ProductId { get; set; }
+    public object Northwind { get; internal set; }
 }
