@@ -1,10 +1,10 @@
 @model IEnumerable<Category>
 
-<div class="bg-primary m-1 p-1 text-white"><h4>Blog Listing</h4></div>
+<div class="bg-primary m-1 p-1 text-white"><h4>Category</h4></div>
 <ul>
-  @foreach (Category categories in Model)
+  @foreach (Category category in Model)
   {
-    <li>@categories</li>
+    <li>@category</li>
   }
 </ul> 
 
