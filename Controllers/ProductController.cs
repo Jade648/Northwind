@@ -1,12 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+
 public class ProductController : Controller
 {
-
-    private DataContext _dataContext;
+  // this controller depends on the NorthwindRepository
+  private DataContext _dataContext;
   public ProductController(DataContext db) => _dataContext = db;
-
-public IActionResult Category() => View(_dataContext.Categories);
-
+  public IActionResult Category() => View(_dataContext.Categories.OrderBy(c => c.CategoryName));
 }
-
