@@ -2,9 +2,9 @@
 
 <div class="bg-primary m-1 p-1 text-white"><h4>Categories</h4></div>
 <ul>
-  @foreach (Category CategoryName in Model)
+  @foreach (Category c in Model)
   {
-    <li>@CategoryName</li>
+    <li>@c.CategoryName</li>
   }
 </ul> 
 
