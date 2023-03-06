@@ -11,11 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        @RenderBody()
-    </div>
-<a href="@Url.Action("Category", "Product")" class="list-group-item list-group-item-action bg-light">Categories</a>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><i class="far fa-compass"></i> Northwind</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -46,6 +42,11 @@
                 </form>
             </div>
         </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+<a href="@Url.Action("Category", "Product")" class="list-group-item list-group-item-action bg-light">Categories</a>
+
     <!-- container -->
     <div class="container-fluid">
         <!-- jumbotron -->
@@ -56,6 +57,7 @@
             <p>For spectacular international quisine, look no further.</p>
             <a class="btn btn-outline-primary btn-lg" href="#" role="button">Order now <i class="fas fa-angle-double-right"></i></a>
         </div>
+
     <!-- jquery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <!-- bootstrap js -->
