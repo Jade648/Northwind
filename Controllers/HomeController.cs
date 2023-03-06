@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 
-using Microsoft.AspNetCore.Mvc;
-
 public class HomeController : Controller
 {
     // this controller depends on the NorthwindRepository
