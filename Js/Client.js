@@ -10,7 +10,10 @@ $(function(){
         toast.currentTime = 0;
         // play audio
         toast.play();
-        $('#toast').toast({ autohide: false }).toast('show');
+        $('#toast').toast({ autohide: false }).toast('show');   
     });
   });
   
+  $( "div" ).data( "ProductName", { first: "Genen Shoyuu", last: "code" } );
+  $( "span" ).first().text( $( "div" ).data( "ProductName" ).first );
+  $( "span" ).last().text( $( "div" ).data( "code" ).last );
