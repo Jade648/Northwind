@@ -3,5 +3,7 @@ public class Customer{
 
     public string CompanyName {get; set;}
 
+    public ICollection<Customer> customers { get; set; }
+
 }
 
