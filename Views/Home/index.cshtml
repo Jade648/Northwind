@@ -1,11 +1,17 @@
 @model IEnumerable<Discount>
 
-
+<div class="row row-cols-1 row-cols-lg-3">
     @foreach (Discount d in Model)
     {
-        <p>@d.Title</p>
+        <div class="col discounts px-2 py-4">
+        <h3>@d.Title</h3>
+        <div class="mb-4"> @d.Description</div>
+        <i> Discount expirs:@d.EndTime</i> <br/>
+        <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code </a>
+        </div>
     }
-
+</div>
 @section Scripts {
     <script type="text/javascript" src="~/js/Client.js"></script>
 }
+
