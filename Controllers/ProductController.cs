@@ -9,7 +9,8 @@ public class ProductController : Controller
   public IActionResult Index(int id) => View(_dataContext.Products.Where(p => p.CategoryId == id && p.Discontinued == false).OrderBy(p => p.ProductName));
 }
 
-public class DiscountController : Controller{
+public class DiscountController : Controller
+{
   private DataContext _dataContext;
 
   public DiscountController(DataContext db)=>_dataContext = db;
