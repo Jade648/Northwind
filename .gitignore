@@ -3,7 +3,9 @@ bin
 obj
 apsettings.json
 apsettings.Developement.json
-launchSettings.json
+Properties
+
+
 
 
 
