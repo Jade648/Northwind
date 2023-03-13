@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 // Connection info stored in appsettings.json
 IConfiguration configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
+    .AddJsonFile("apsettings.Development.json")
     .Build();
 
 var builder = WebApplication.CreateBuilder(args);
