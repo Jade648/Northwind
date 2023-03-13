@@ -6,9 +6,10 @@
         <div class="col discounts px-2 py-4">
         <h3>@d.Title</h3>
         <div class="mb-4"> @d.Description</div>
-        <i> Discount expirs:@d.EndTime</i> <br/>
+        <i>Discount expires: @d.EndTime.ToString("MM/dd/yyyy")</i><br />
         <a href="#" class="code" data-code="@d.Code" data-product="@d.Title"><i class="far fa-hand-point-right"></i> Discount Code </a>
         </div>
+         
     }
 </div>
 @section Scripts {
