@@ -15,11 +15,8 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 app.UseRouting();
 
-app.UseMvc(routes =>
-        {
-            routes.MapRoute(
-                name: "default",
-                template: "{controller=Home}/{action=Index}/{id?}");
-        });
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
