@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Northwind_2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230306142832_CreateDiscount")]
-    partial class CreateDiscount
+    [Migration("20230329044407_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,6 +45,48 @@ namespace Northwind_2.Migrations
                     b.HasIndex("CategoryId1");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Customer", b =>
+                {
+                    b.Property<int>("CustomerId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CompanyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CustomerId1")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Fax")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PostalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Region")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("CustomerId");
+
+                    b.HasIndex("CustomerId1");
+
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Discount", b =>
@@ -130,6 +172,13 @@ namespace Northwind_2.Migrations
                         .HasForeignKey("CategoryId1");
                 });
 
+            modelBuilder.Entity("Customer", b =>
+                {
+                    b.HasOne("Customer", null)
+                        .WithMany("customers")
+                        .HasForeignKey("CustomerId1");
+                });
+
             modelBuilder.Entity("Discount", b =>
                 {
                     b.HasOne("Product", "Product")
@@ -144,6 +193,11 @@ namespace Northwind_2.Migrations
             modelBuilder.Entity("Category", b =>
                 {
                     b.Navigation("categories");
+                });
+
+            modelBuilder.Entity("Customer", b =>
+                {
+                    b.Navigation("customers");
                 });
 #pragma warning restore 612, 618
         }
